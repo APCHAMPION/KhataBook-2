@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/login-signup.css">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="logo">
+            <h4><a href="/">KhataBook</a></h4>
+        </div>
+        <div class="right">
+            <a href="/">Home</a>
+            <a href="/createNew">Create New Hisaab</a>
+        </div>
+    </div>
+
+    <div class="login-page">
+        <form action="/signup" method="post" id="registerForm">
+            <h4><%=value%> your Account</h4>
+            <input type="email" name="email"  id="email" placeholder="Email">
+            <input type="password" name="pass" placeholder="Password">
+            <button class="btn" type="submit"><%=value%></button>
+        </form>
+    </div>
+</body>
+    <Script src="./JS/login-signup.js"></Script>
+
+</html>

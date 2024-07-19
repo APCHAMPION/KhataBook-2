@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/record.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="logo">
+            <h4><a href="/">KhataBook</a></h4>
+        </div>
+        <div class="right">
+            <a href="/">Home</a>
+            <a href="/create">Create New Hisaab</a>
+        </div>
+    </div>
+
+
+    <div class="btns">
+        <%if(hisaab.encrypt=="true"){%>
+        <button class="Encry-btn btn"><i class="ri-lock-fill"></i> Encrypted</button>
+        <button class="eye-btn btn"><i class="ri-eye-off-line"></i></button>
+        <%}else{%>
+            <button class="Encry-btn Available-btn btn">Available</button>
+        <%}%>
+        <%if(hisaab.share=="false"){%>
+            <button class="share btn"><i class="ri-share-line"></i> Share as a link</button>
+        <%}%>
+        <button class="delete btn-right btn" onclick="Delete('<%=hisaab.title%>')">Delete</button>
+        <button class="edit btn-right btn" onclick="Edit('<%=hisaab.title%>')">Edit</button>
+    </div> 
+    <p class="date">Created on <%=hisaab.createdAt.toISOString().split('T')[0]%></p>
+    <div class="content">
+        <h3><%=hisaab.title%></h3>
+        <p><%=hisaab.hisaab%></p>
+    </div>
+
+</body>
+
+    <script>
+        function Edit(value){
+           const codedvalue = encodeURIComponent(value);
+           window.location.href = `/edit/${codedvalue}`;
+        }
+
+        function Delete(value){
+            const codedvalue = encodeURIComponent(value);
+            window.location.href = `/Delete/${codedvalue}`;
+        }
+    </script>
+</html>

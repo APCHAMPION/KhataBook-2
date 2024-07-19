@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40vw;
+    margin-top: 10px;
+}
+
+.logo a{
+    text-decoration: none;
+    color: #000;
+}
+
+.logo  h4{
+    font-size: 2vw;
+    font-weight: 100;
+    cursor: pointer;
+    color: #000;
+}
+
+.nav-bar .right{
+    display: flex;
+    gap: 3vw;
+}
+
+.nav-bar .right a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+.login-page{
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+}
+
+.login-page form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    width: 20vw;
+    height: 30vh;
+}
+
+form h4{
+    font-size: 20px;
+}
+
+form input{
+    padding: 12px;
+    font-size: 15px;
+    background: #f4f1f1;
+    border: none;
+}
+
+form button{
+    width: 80px;
+    padding: 8px;
+    font-size: 15px ;
+    cursor: pointer;
+    background-color: rgb(0,136,255);
+    border: none;
+    color: white;
+}

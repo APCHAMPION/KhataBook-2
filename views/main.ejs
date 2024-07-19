@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="logo">
+            <h4><a href="/">KhataBook</a></h4>
+        </div>
+        <div class="right">
+            <a href="/">Home</a>
+            <a href="/create">Create New Hisaab</a>
+        </div>
+    </div>
+
+    <div class="btn-fetures">
+        <button class="filter-btn btn">Filters <i class="ri-sound-module-line"></i></button>
+        <button class="DateBy-btn btn">Date By <i class="ri-calendar-line"></i></button>
+        <button class="newest-first-btn btn">Newest First <i class="ri-arrow-down-s-line"></i></button>
+    </div>
+
+    <div class="full-hisaab">
+        <%data.forEach((entry)=>{%>
+            <div class="hisaab" onclick="onclicktoshow('<%=entry.title%>')">
+                <div class="hisaab-top">
+                    <%if(entry.encrypt == "true"){%>
+                        <button class="Encry-btn newest-first-btn"><i class="ri-lock-fill"></i> Encrypted</button>
+                        <%if(entry.share=="false"){%>
+                        <button class="eye-btn"><i class="ri-eye-off-line"></i></button>
+                        <%}%>
+                    <%}else{%>
+                        <button class="Encry-btn newest-first-btn Available-btn">Available</button>
+                    <%}%>
+                    <p>Created On <%=entry.createdAt.toISOString().split('T')[0]%></p>
+                </div>
+
+                <h2><%=entry.title%></h2>
+                <a href="/view/<%=entry.title%>">view hisaab</a>
+            </div>
+        <%})%>
+    </div>
+</body>
+    <script src="./JS/main.js"></script>
+</html>

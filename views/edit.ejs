@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/edit.css">
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="logo">
+            <h4><a href="/">KhataBook</a></h4>
+        </div>
+        <div class="right">
+            <a href="/">Home</a>
+        </div>
+    </div>
+
+    <form action="/edit/<%=hisaab._id%>" method="post" id="form" class="form">
+        <div class="hisaab-heading">
+            <h3>Edit your editab</h3>
+        </div>
+        <div class="form-content">
+            <h1><%=hisaab.title%></h1>
+            <textarea name="hisaab" id="text-area"><%=hisaab.hisaab%></textarea>
+            <div class="chack-boxes">
+                <div class="upper-check-box">
+                    <%if(hisaab.encrypt=="false"){%>
+                    <div class="ucb"><input type="checkbox" name="encrypt" value="true"  ><p>Encrypt this file</p></div>
+                    <%}else{%>
+                    <div class="ucb"><input type="checkbox" name="encrypt" value="true" checked ><p>Encrypt this file</p></div>
+                    <%}%>
+                    <%if(hisaab.share=="false"){%>
+                    <div class="ucb"><input type="checkbox" name="share" value="true" ><p>Shareable file ?</p></div>
+                    <%}else{%>
+                    <div class="ucb"><input type="checkbox" name="share" value="true" checked ><p>Shareable file ?</p></div>
+                    <%}%>
+                </div>
+                <div class="lower-check-box">
+                    <%if(hisaab.edit=="false"){%>
+                    <div class="ucb"><input type="checkbox" name="edit" value="true" ><p>Edit Permissions</p></div>
+                    <%}else{%>
+                    <div class="ucb"><input type="checkbox" name="edit" value="true" checked ><p>Edit Permissions</p></div>
+                    <%}%>
+                </div>
+            </div>
+            <button class="btn-1" type="submit">Edit Hisaab</button>
+        </div>
+    </form>
+</body>
+
+    <!-- <script src="./JS/create.js"></script> -->
+
+</html>
